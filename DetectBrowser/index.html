@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Detection</title>
+    <script>
+        function redirectToBrowserPage() {
+            var userAgent = navigator.userAgent;
+            var browser = "";
+
+            if (userAgent.includes("Chrome")) {
+                browser = "Chrome";
+            } else if (userAgent.includes("Edg")) {
+                browser = "Edge";
+            } else if (userAgent.includes("Brave")) {
+                browser = "Brave";
+            } else if (userAgent.includes("Firefox")) {
+                browser = "Firefox";
+            } else if (userAgent.includes("OPR")) {
+                browser = "Opera";
+            }
+
+            // Redirect based on the detected browser
+            switch (browser) {
+                case "Chrome":
+                    window.location.href = "chrome.html";
+                    break;
+                case "Edge":
+                    window.location.href = "edge.html";
+                    break;
+                case "Brave":
+                    window.location.href = "brave.html";
+                    break;
+                case "Firefox":
+                    window.location.href = "firefox.html";
+                    break;
+                case "Opera":
+                    window.location.href = "opera.html";
+                    break;
+                default:
+                    // Redirect to a default page if the browser is not recognized
+                    window.location.href = "default.html";
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToBrowserPage()">
+    <!-- You can add content here or leave it empty -->
+</body>
+</html>
