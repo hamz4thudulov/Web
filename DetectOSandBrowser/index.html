@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Detection</title>
+    <script>
+        function redirectToOSPage() {
+            var userAgent = navigator.userAgent;
+
+            if (userAgent.includes("Android")) {
+                window.location.href = "os/android.html";
+            } else if (userAgent.includes("Windows NT 10")) {
+                window.location.href = "os/windows.html";
+            } else if (userAgent.includes("Linux")) {
+                window.location.href = "os/linux.html";
+            } else {
+                window.location.href = "os/default.html";
+            }
+        }
+    </script>
+</head>
+<body>
+   <h1>Welcome</h1>
+   <button  onclick="redirectToOSPage()">Detect my OS</button>
+</body>
+</html>
